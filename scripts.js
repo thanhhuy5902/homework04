@@ -45,6 +45,8 @@ let heart = 519; // Tọa độ y của hình trái tim
 // Tọa độ y mục tiêu của hình trái tim
 
 document.addEventListener("click", (e) => {
+  const audio = document.getElementById("myAudio");
+  audio.play();
   if (!isEventHandled) {
     isEventHandled = true;
     heart.targetX1 = e.clientX; // Lấy tọa độ x của sự kiện click
@@ -371,7 +373,7 @@ function draw() {
     } else {
       // Vẽ vỏ sò sau khi có sự kiện click
       if (shellY < 800) {
-        shellY += 1;
+        shellY += 2;
       } else {
         shellY = 800;
       }
@@ -461,7 +463,7 @@ function draw() {
     } else if (eyes1.currentX > eyes1.targetX) {
       eyes1.currentX -= 1;
     }
-    if (eyes1.currentX > 565) {
+    if (eyes1.currentX > 560) {
       eyes1.currentX -= 1;
     }
     if (eyes1.currentX < 535) {
